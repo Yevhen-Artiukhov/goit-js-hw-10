@@ -16,3 +16,235 @@
 @import url('./badges.css');
 @import url('./back-link.css');
 @import url('./footer.css');
+
+/* ========== PAGE BASE OVERRIDES ========== */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #d3d3d3;
+}
+
+/* ========== TIMER LAYOUT ========== */
+
+.timer-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* input + button in one row */
+.timer-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* timer digits block */
+.timer {
+  display: flex;
+  gap: 40px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.value {
+  font-size: 32px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.label {
+  margin-top: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #777777;
+}
+
+/* ========== INPUT STYLES ========== */
+
+#datetime-picker {
+  min-width: 260px;
+  padding: 8px 12px;
+  font-size: 14px;
+  border-radius: 4px;
+  border: 1px solid #c3c3c3;
+  background: #ffffff;
+  color: #555555;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+#datetime-picker::placeholder {
+  color: #bbbbbb;
+}
+
+/* hover */
+#datetime-picker:hover:not(:disabled) {
+  border-color: #8d8d8d;
+}
+
+/* focus / active */
+#datetime-picker:focus:not(:disabled) {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.3);
+}
+
+/* disabled */
+#datetime-picker:disabled {
+  background: #eeeeee;
+  color: #888888;
+  cursor: not-allowed;
+}
+
+/* ========== START BUTTON STYLES ========== */
+
+/* base */
+button[data-start] {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease,
+    box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+/* disabled (initial) */
+button[data-start]:disabled {
+  background-color: #c9c9c9;
+  color: #777777;
+  cursor: not-allowed;
+}
+
+/* enabled */
+button[data-start]:not(:disabled) {
+  background-color: #4a90e2;
+  color: #ffffff;
+}
+
+/* hover only when enabled */
+button[data-start]:not(:disabled):hover {
+  background-color: #3373c8;
+}
+
+/* active press */
+button[data-start]:not(:disabled):active {
+  transform: translateY(1px);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* ========== FLATPICKR TWEAKS ========== */
+
+.flatpickr-calendar {
+  font-size: 14px;
+}
+
+/* selected day */
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: #4a90e2 !important;
+  border-color: #4a90e2 !important;
+  color: #ffffff !important;
+}
+
+/* hover on day */
+.flatpickr-day:hover {
+  background: rgba(74, 144, 226, 0.2) !important;
+}
+
+/* today outline */
+.flatpickr-day.today {
+  border-color: #4a90e2 !important;
+}
+
+/* ========== IZI TOAST TWEAKS ========== */
+
+.iziToast-message {
+  font-size: 14px;
+}
+
+.iziToast {
+  border-radius: 6px !important;
+}
+
+/* ========== SNACKBAR / PROMISES FORM ========== */
+
+.snackbar-section {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.snackbar-form {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.snackbar-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  color: #444;
+}
+
+.snackbar-label input[name='delay'] {
+  margin-top: 4px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #c3c3c3;
+  outline: none;
+  min-width: 220px;
+}
+
+.snackbar-label input[name='delay']:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.snackbar-fieldset {
+  border: 1px solid #c3c3c3;
+  border-radius: 4px;
+  padding: 8px 12px 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.snackbar-fieldset legend {
+  padding: 0 4px;
+}
+
+.snackbar-fieldset label {
+  margin-right: 16px;
+}
+
+.snackbar-btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #4a90e2;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.snackbar-btn:hover {
+  background-color: #3373c8;
+}
+
+.snackbar-btn:active {
+  transform: translateY(1px);
+}
